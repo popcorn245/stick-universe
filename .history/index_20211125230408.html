@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: arial;
+      }
+
+      :root {
+        --stick-color: #008000;
+        --stick-width: 8px;
+      }
+
+      h2 {
+        margin: 0;
+        text-indent: 10px;
+      }
+
+      input[type="color"] {
+        height: 50px;
+      }
+
+      label {
+        display: block;
+        font-size: 50px;
+      }
+
+      #stickman {
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #stickman:hover {
+        cursor: pointer;
+      }
+
+      #stickman .head {
+        height: 80px;
+        width: 80px;
+        margin: 0 auto;
+        background: var(--stick-color);
+        border-radius: 100%;
+        position: relative;
+      }
+
+      #stickman .head:before,
+      #stickman .head:after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        height: 20px;
+        width: 8px;
+        background: white;
+        border-radius: 100%;
+        animation: blink 8s infinite;
+      }
+
+      #stickman .head:before {
+        left: 25px;
+      }
+
+      #stickman .head:after {
+        right: 25px;
+      }
+
+      #stickman .torso {
+        margin: 0 auto;
+        height: 100px;
+        width: var(--stick-width);
+        background: var(--stick-color);
+      }
+
+      #stickman .arm,
+      #stickman .leg {
+        position: absolute;
+        width: 60px;
+        height: var(--stick-width);
+        background: var(--stick-color);
+        border-radius: 3px;
+      }
+
+      #stickman .arm {
+        top: 100px;
+      }
+
+      #stickman .arm.left {
+        transform: rotate(-45deg);
+        left: 100px;
+      }
+
+      #stickman .arm.right {
+        transform: rotate(45deg);
+        left: 140px;
+      }
+
+      #stickman .leg {
+        top: 200px;
+        width: 80px;
+      }
+
+      #stickman .leg.left {
+        transform: rotate(-45deg);
+        left: 85px;
+      }
+
+      #stickman .leg.right {
+        transform: rotate(45deg);
+        left: 135px;
+      }
+
+      @keyframes blink {
+        0% {
+          height: 20px;
+        }
+        5% {
+          margin-top: 5px;
+          height: 0px;
+        }
+        10% {
+          margin-top: 0;
+          height: 20px;
+        }
+      }
+
+      .jump-animation {
+        animation: jump 3s ease;
+      }
+
+      @keyframes jump {
+        0% {
+          margin-top: 0px;
+        }
+        50% {
+          margin-top: -100px;
+        }
+        100% {
+          margin-top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stickman">
+      <div class="head"></div>
+      <div class="torso"></div>
+      <div class="arm left"></div>
+      <div class="arm right"></div>
+      <div class="leg left"></div>
+      <div class="leg right"></div>
+    </div>
+
+    <form>
+      <h2>Hmmmmmm wonder what these do...</h2>
+      <label for="color">
+        🎨
+        <input id="color" type="color" value="#008000" />
+      </label>
+      <label for="weight">
+        🍔
+        <input id="weight" type="range" value="8" min="1" max="30" />
+      </label>
+    </form>
+  </body>
+</html>
