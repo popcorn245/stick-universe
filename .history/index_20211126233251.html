@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("input", (event) => {
+        console.log(event);
+        if (event.target.id === "color" && event.target.value) {
+          document.body.style.setProperty("--stick-color", event.target.value);
+        } else if (event.target.id === "weight" && event.target.value) {
+          document.body.style.setProperty(
+            "--stick-width",
+            `${event.target.value}px`
+          );
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Space") {
+          const stickman = document.querySelector("#stickman");
+          console.dir(stickman);
+          if (stickman.classList.contains("jump-animation")) {
+            stickman.classList.remove("jump-animation");
+          }
+          setTimeout(() => {
+            stickman.classList.add("jump-animation");
+          }, 200);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="stickman">
+      <div class="head"></div>
+      <div class="torso"></div>
+      <div class="arm left"></div>
+      <div class="arm right"></div>
+      <div class="leg left"></div>
+      <div class="leg right"></div>
+      <div class="butt"><div class="arm"></div></div>
+    </div>
+
+    <form>
+      <h2>Hmmmmmm wonder what these do...</h2>
+      <label for="color">
+        🎨
+        <input id="color" type="color" value="#008000" />
+      </label>
+      <label for="weight">
+        🍔
+        <input id="weight" type="range" value="8" min="1" max="30" />
+      </label>
+    </form>
+  </body>
+</html>
