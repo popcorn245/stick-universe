@@ -19,7 +19,13 @@
 //     }, 200);
 //   }
 // });
-
+document.querySelector("#stick-house").addEventListener("click", (event) => {
+  const stickHouseEl = document.querySelector("#stick-house");
+  console.log(stickHouseEl);
+  stickHouseEl.style["--window-color"] = "yellow";
+  stickHouseEl.style["--show-lights"] = "block";
+});
+</3;
 // NEW CODE FROM DAY 006
 
 //GLOBAL
@@ -46,6 +52,61 @@ function sendMessage(message) {
   alert(message);
 }
 
-sendMessage("Hello Me");
-sendMessage("Say whatever");
-sendMessage("Hello Me");
+// PRIMITIVES TYPES
+function daySeven() {
+  const boolean = true;
+  const integer = 0;
+  const nothing = null;
+  const string = "";
+
+  let secret = "testing";
+  let groceries = ["milk", "eggs", "cheese", "butter"];
+
+  // 0 Indexed
+  for (const shoppingItem of groceries) {
+    console.log(shoppingItem);
+  }
+
+  // Ken
+  for (let o = 1; o <= 9; o++) {
+    console.log(o);
+  }
+
+  secret = "wee";
+  var ken = "tits";
+  // CJ
+  const me = "Cj";
+
+  // Stick
+
+  var bobby = "bitch";
+
+  alert(`This is the secret word: ${secret}!`);
+}
+
+daySeven();
+
+// EOT END OF LINE TERMINATION
+
+// CJ
+function goat() {
+  var nice = "cj";
+  const boolean = false;
+  console.log(nice);
+}
+goat();
+
+// Stick
+
+function daysixtynine() {
+  var hi = "Stickman";
+  console.log(hi);
+}
+daysixtynine();
+
+// Ken
+function derp() {
+  var ken = "ke";
+  console.log(ken);
+}
+derp();
