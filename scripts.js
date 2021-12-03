@@ -25,7 +25,7 @@ document.querySelector("#stick-house").addEventListener("click", (event) => {
   stickHouseEl.style["--window-color"] = "yellow";
   stickHouseEl.style["--show-lights"] = "block";
 });
-</3;
+
 // NEW CODE FROM DAY 006
 
 //GLOBAL
