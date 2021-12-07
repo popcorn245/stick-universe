@@ -68,3 +68,5 @@ document.addEventListener("keydown", (event) => {
 
 // Create our tank (SEE FUNCTION ON LINE 9)
 const bobby = tank.create();
+const sticks = tank.create();
+const cjs = tank.create();
