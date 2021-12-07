@@ -25,6 +25,9 @@ const bobbysTank = {
   },
 };
 
+// I added CSS transition property to give it smooth animation
+// check the style attribute on image tag in index.html
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") {
     bobbysTank.move(15, 0);
